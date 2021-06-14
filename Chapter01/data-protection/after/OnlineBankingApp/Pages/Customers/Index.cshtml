@@ -1,0 +1,45 @@
+@page
+@model OnlineBankingApp.Pages.Customers.IndexModel
+@inject System.Text.Encodings.Web.JavaScriptEncoder jsEncoder
+
+@{
+    ViewData["Title"] = "List of Customers";
+}
+
+<h1>List of Customers</h1>
+
+<p>
+    <a asp-page="Create">Create New Customer Account</a>
+</p>
+
+<table id="table" class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Primary Email Addrress</th>
+        <th>Phone</th>
+    </tr>
+</table>
+
+@section Scripts {
+    <script type="text/javascript">    
+
+        $(document).ready(function() {
+            @foreach (var item in Model.Customer) {
+                <text>
+                    var $tr = $('<tr>').append($('<td>').text("@jsEncoder.Encode(item.FirstName)"));
+                    $tr.append($('<td>').text("@jsEncoder.Encode(item.MiddleName)"));
+                    $tr.append($('<td>').text("@jsEncoder.Encode(item.LastName)"));
+                    $tr.append($('<td>').text("@jsEncoder.Encode(item.DateOfBirth.ToString("d"))"));
+                    $tr.append($('<td>').text("@jsEncoder.Encode(item.Email)"));
+                    $tr.append($('<td>').text("@jsEncoder.Encode(item.Phone)"));
+                    $tr.append($('<td>').append("<a href='/Customers/Details?id=@item.EncCustomerID'>See Details</a>"));
+                    $tr.appendTo('#table');
+                </text>
+            }
+        });
+        
+    </script>
+}

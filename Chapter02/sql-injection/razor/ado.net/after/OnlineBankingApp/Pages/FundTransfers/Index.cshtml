@@ -1,0 +1,65 @@
+@page "{searchString?}"
+@model OnlineBankingApp.Pages.FundTransfers.IndexModel
+@inject System.Text.Encodings.Web.HtmlEncoder htmlEncoder
+@inject System.Text.Encodings.Web.UrlEncoder urlEncoder
+
+@{
+    ViewData["Title"] = "Fund Transfers";
+}
+
+<h1>Fund Transfers</h1>
+
+<p>
+    <a asp-page="Create">Send Money</a>
+</p>
+<form>
+    <p>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FundTransfer[0].AccountFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FundTransfer[0].AccountTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FundTransfer[0].TransactionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FundTransfer[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FundTransfer[0].Note)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.FundTransfer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @if (item.Note is not null) {            
+                    @(new Microsoft.AspNetCore.Html.HtmlString(htmlEncoder.Encode(item.Note)))
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

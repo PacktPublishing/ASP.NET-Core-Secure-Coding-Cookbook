@@ -1,0 +1,48 @@
+@page
+@model OnlineBankingApp.Pages.FundTransfers.DetailsModel
+
+@{
+    ViewData["Title"] = "Fund Transfer Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Fund Transfer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fundTransfer.AccountFrom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fundTransfer.AccountFrom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fundTransfer.AccountTo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fundTransfer.AccountTo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fundTransfer.TransactionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fundTransfer.TransactionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fundTransfer.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fundTransfer.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fundTransfer.Note)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fundTransfer.Note)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,50 @@
+@page
+@model OnlineBankingApp.Pages.Customers.IndexModel
+
+@{
+    ViewData["Title"] = "List of Customers";
+}
+
+<h1>List of Customers</h1>
+
+<p>
+    <a asp-page="Create">Create New Customer Account</a>
+</p>
+
+<table id="table" class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Primary Email Addrress</th>
+        <th>Phone</th>
+    </tr>
+</table>
+
+@section Scripts {
+    <script type="text/javascript">    
+
+        $(document).ready(function() {
+            @foreach (var item in Model.Customer) {
+                <text>
+                    var firstName = "@Html.Raw(item.FirstName)";
+                    var middleName = "@Html.Raw(item.MiddleName)";
+                    var lastName = "@Html.Raw(item.LastName)";
+                    var dateOfBirth = "@Html.Raw(item.DateOfBirth)";
+                    var email = "@Html.Raw(item.Email)";
+                    var phone = "@Html.Raw(item.Phone)";
+
+                    var $tr = $('<tr>').append($('<td>').text(firstName));
+                    $tr.append($('<td>').text(middleName));
+                    $tr.append($('<td>').text(lastName));
+                    $tr.append($('<td>').text(dateOfBirth));
+                    $tr.append($('<td>').text(email));
+                    $tr.append($('<td>').text(phone));
+                    $tr.appendTo('#table');
+                </text>
+            }
+        });
+        
+    </script>
+}

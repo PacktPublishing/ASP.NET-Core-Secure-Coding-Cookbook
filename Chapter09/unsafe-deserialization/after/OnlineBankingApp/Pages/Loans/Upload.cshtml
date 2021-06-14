@@ -1,0 +1,22 @@
+@page
+@model OnlineBankingApp.Pages.Loans.UploadModel
+
+@{
+    ViewData["Title"] = "Upload Loan Application";
+}
+
+<h1>Apply for a Loan</h1>
+
+<h4>Upload</h4>
+<hr />
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" />
+</form>
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

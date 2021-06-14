@@ -1,0 +1,60 @@
+@page
+@model OnlineBankingApp.Pages.Payees.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Payees</h1>
+
+<form id='searchForm'>
+    <p>
+        <input type="submit" value="Show Payees" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Roots.rows[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roots.rows[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roots.rows[0].PhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roots.rows[0].AccountNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roots.rows[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Roots.rows) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+@page
+@model OnlineBankingApp.Pages.FundTransfers.CreateModel
+
+@{
+    ViewData["Title"] = "Fund Transfer";
+}
+
+
+<h4>Fund Transfer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FundTransfer.AccountFrom" class="control-label"></label>
+                <select asp-for="FundTransfer.AccountFrom" class="form-control"
+                        asp-items="@Model.AccountSL">
+                    <option value="">-- Select Account --</option>
+                </select>
+                <span asp-validation-for="FundTransfer.AccountFrom" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="FundTransfer.AccountTo" class="control-label"></label>
+                <select asp-for="FundTransfer.AccountTo" class="form-control"
+                        asp-items="@Model.AccountSL">
+                    <option value="">-- Select Account --</option>
+                </select>
+                <span asp-validation-for="FundTransfer.AccountTo" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="FundTransfer.TransactionDate" class="control-label"></label>
+                <input asp-for="FundTransfer.TransactionDate" class="form-control" />
+                <span asp-validation-for="FundTransfer.TransactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FundTransfer.Amount" class="control-label"></label>
+                <input asp-for="FundTransfer.Amount" class="form-control" />
+                <span asp-validation-for="FundTransfer.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FundTransfer.Note" class="control-label"></label>
+                <textarea asp-for="FundTransfer.Note" class="form-control"></textarea>
+                <span asp-validation-for="FundTransfer.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send Money" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List of Fund Transfers</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,37 @@
+using System.Xml;
+using System.Xml.XPath;
+using Microsoft.AspNetCore.Hosting;
+
+using System.Collections.Generic;
+using OnlineBankingApp.Models;
+
+namespace OnlineBankingApp.Services
+{
+    public class LoanService : ILoanService
+    {
+        private readonly OnlineBankingApp.Data.OnlineBankingAppContext _context;
+
+        public LoanService(OnlineBankingApp.Data.OnlineBankingAppContext context)
+        {
+            _context = context;
+        }
+
+        public List<Loan> Search(string input)
+        {
+            var loans = from l in _context.Loan
+                        select l;
+            if (!string.IsNullOrEmpty(input))
+            {
+                loans = loans.Where(l => l.Note.Contains(input));
+            }
+
+            return loans.ToListAsync();
+        }        
+
+    }
+
+    public interface ILoanService
+    {
+        List<Loan> Search(string input);
+    }
+}

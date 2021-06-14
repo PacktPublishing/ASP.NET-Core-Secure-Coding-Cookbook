@@ -1,0 +1,59 @@
+@page "{searchString?}"
+@model OnlineBankingApp.Pages.Knowledgebase.IndexModel
+
+@{
+    ViewData["Title"] = "How can we help?";
+}
+
+<h1>How can we help?</h1>
+
+<p>
+
+</p>
+<form>
+    <p>
+        Enter Keyword: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Knowledge[0].Topic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Knowledge[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Knowledge) {    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section Scripts {
+    @{
+        if(Model.SearchString is not null){
+            <script>
+                $(document).ready(function () {
+                    var param = new URLSearchParams(window.location.search);
+                    var searchString = param.get('SearchString');
+                    var message = '<br><h2> You searched for ' + searchString + '</h2>';
+                    $('form').append(message);
+                });
+            </script>
+        }
+    }
+    
+}

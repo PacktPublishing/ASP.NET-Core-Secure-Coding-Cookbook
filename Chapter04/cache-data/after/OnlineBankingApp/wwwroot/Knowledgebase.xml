@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<knowledgebase>
+   <knowledge>
+      <topic lang="en">Types of Transfers</topic>
+      <description lang="en">
+         Make transfers from checking and savings to:
+         Checking and savings
+         Make transfers from line of credit to:
+         Checking and savings
+      </description>
+      <tags>transfers, transferring funds</tags>
+      <sensitivity>Public</sensitivity>
+   </knowledge>
+   <knowledge>
+      <topic lang="en">Expedited Withdrawals</topic>
+      <description lang="en">
+            Expedited withdrawals are available to our executive account holders.
+            You may reach out to Stanley Jobson at stanley.jobson@bank.com
+      </description>
+      <tags>withdrawals, expedited withdrawals</tags>
+      <sensitivity>Confidential</sensitivity>
+   </knowledge>
+</knowledgebase>
