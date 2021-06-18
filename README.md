@@ -1,9 +1,9 @@
-# ASP.NET Core Secure Coding Cookbook 
+# ASP.NET Core 5 Secure Coding Cookbook 
 
 <a href="https://www.packtpub.com/product/asp-net-core-secure-coding-cookbook/9781801071567?utm_source=github&utm_medium=repository&utm_campaign=9781801071567"><img src="https://static.packt-cdn.com/products/9781801071567/cover/smaller" alt="Browser" height="256px" align="right"></a>
 
 This is the code repository for [
-ASP.NET Core Secure Coding Cookbook](https://www.packtpub.com/product/asp-net-core-secure-coding-cookbook/9781801071567), published by Packt.
+ASP.NET Core 5 Secure Coding Cookbook](https://www.packtpub.com/product/asp-net-core-secure-coding-cookbook/9781801071567), published by Packt.
 
 **Practical recipes for tackling vulnerabilities in your ASP.NET web applications**
 
@@ -34,7 +34,7 @@ The code will look like the following:
 ```
 
 **Following is what you need for this book:**
-This ASP.NET Core book is for intermediate-level ASP.NET Core web developers and software engineers who use the framework to develop web applications and are looking to focus on their security using coding best practices. The book is also for application security engineers, analysts, and specialists who want to know more about securing ASP.NET Core using code and understand how to resolve issues identified by the security tests they perform daily.
+This ASP.NET Core 5 book is for intermediate-level ASP.NET Core web developers and software engineers who use the framework to develop web applications and are looking to focus on their security using coding best practices. The book is also for application security engineers, analysts, and specialists who want to know more about securing ASP.NET Core using code and understand how to resolve issues identified by the security tests they perform daily.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-13).
 
