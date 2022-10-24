@@ -64,3 +64,7 @@ is a Senior Application Security Engineer working at a Fortune 500 company where
 Roman held multiple certifications: the GIAC Web Application Penetration Tester (GWAPT), ISC2's Certified Secure Software Lifecycle Professional (CSSLP), and EC-Council's Certified Application Security Engineer in .NET (CASE.NET).
 
 Roman also has a Master's degree in Information Systems and a Bachelors in Computer Science.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801071567">https://packt.link/free-ebook/9781801071567 </a> </p>
